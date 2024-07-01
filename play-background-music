@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -o errexit
+set -o nounset
+
+script_dir_pathname="$(dirname -- "$0")"
+readonly script_dir_pathname
+
+make -C "$script_dir_pathname/background-music/" all
+mpv --no-video --shuffle --loop-playlist --volume=15 -- "$script_dir_pathname/background-music/playlist.m3u8"
