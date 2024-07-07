@@ -1,0 +1,28 @@
+Randomize: on
+
+variants:
+  New Follow (A):
+    GENERAL SETTINGS:
+      Alert Condition: Any new follow to your channel
+      Chance: Common
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio1.ogg
+      Volume: 4%
+
+  New Follow (B):
+    GENERAL SETTINGS:
+      Alert Condition: Any new follow to your channel
+      Chance: Common
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio2.ogg
+      Volume: 4%

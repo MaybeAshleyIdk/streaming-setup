@@ -1,0 +1,182 @@
+Randomize: on
+
+variants:
+  #region community
+
+  #region community multiple
+
+  New Subscriber Gift (Community Multiple) (A):
+    GENERAL SETTINGS:
+      Alert Condition: Community gift subs at least
+      Gift Subs: 2
+      Chance: Common
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio1.ogg
+      Volume: 4%
+
+  New Subscriber Gift (Community Multiple) (B):
+    GENERAL SETTINGS:
+      Alert Condition: Community gift subs at least
+      Gift Subs: 2
+      Chance: Common
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio2.ogg
+      Volume: 4%
+
+  New Subscriber Gift (Community Multiple Anonymous) (A):
+    GENERAL SETTINGS:
+      Alert Condition: Anonymous community gift subs at least
+      Gift Subs: 2
+      Chance: Common
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio1.ogg
+      Volume: 4%
+
+  New Subscriber Gift (Community Multiple Anonymous) (B):
+    GENERAL SETTINGS:
+      Alert Condition: Anonymous community gift subs at least
+      Gift Subs: 2
+      Chance: Common
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio2.ogg
+      Volume: 4%
+
+  #endregion
+
+  #region community single
+
+  New Subscriber Gift (Community Single) (A):
+    GENERAL SETTINGS:
+      Alert Condition: Community gift sub exactly
+      Gift Subs: 1
+      Chance: Common
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio1.ogg
+      Volume: 4%
+
+  New Subscriber Gift (Community Single) (B):
+    GENERAL SETTINGS:
+      Alert Condition: Community gift sub exactly
+      Gift Subs: 1
+      Chance: Common
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio2.ogg
+      Volume: 4%
+
+  New Subscriber Gift (Community Single Anonymous) (A):
+    GENERAL SETTINGS:
+      Alert Condition: Anonymous community gift sub exactly
+      Gift Subs: 1
+      Chance: Common
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio1.ogg
+      Volume: 4%
+
+  New Subscriber Gift (Community Single Anonymous) (B):
+    GENERAL SETTINGS:
+      Alert Condition: Anonymous community gift sub exactly
+      Gift Subs: 1
+      Chance: Common
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio2.ogg
+      Volume: 4%
+
+  #endregion
+
+  #endregion
+
+  #region individual
+
+  New Subscriber Gift (Individual) (A):
+    GENERAL SETTINGS:
+      Alert Condition: Individual gift subscription
+      Chance: Common
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio1.ogg
+      Volume: 4%
+
+  New Subscriber Gift (Individual) (B):
+    GENERAL SETTINGS:
+      Alert Condition: Individual gift subscription
+      Chance: Common
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio2.ogg
+      Volume: 4%
+
+  New Subscriber Gift (Individual Anonymous) (A):
+    GENERAL SETTINGS:
+      Alert Condition: Anonymous gift subscription
+      Chance: Common
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio1.ogg
+      Volume: 4%
+
+  New Subscriber Gift (Individual Anonymous) (B):
+    GENERAL SETTINGS:
+      Alert Condition: Anonymous gift subscription
+      Chance: Common
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio1.ogg
+      Volume: 4%
+
+  #endregion

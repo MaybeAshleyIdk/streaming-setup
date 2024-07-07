@@ -1,0 +1,15 @@
+Randomize: off
+
+variants:
+  Hydration Redemption:
+    GENERAL SETTINGS:
+      Alert Condition: HYDRATION
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+      Say Redemption Message: off
+
+    VISUALS & SOUND:
+      file: audio.ogg
+      Volume: 4%

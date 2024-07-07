@@ -1,0 +1,15 @@
+Randomize: off
+
+variants:
+  New Raid:
+    GENERAL SETTINGS:
+      Alert Condition: Raided with at least
+      Viewers: 1
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+
+    VISUALS & SOUND:
+      file: audio.ogg
+      Volume: 4%
