@@ -1,0 +1,23 @@
+Default Rewards:
+  Highlight My Message:
+    Smart Cost: on
+
+  Unlock a Random Sub Emote: off
+  Send a Message in Sub-Only Mode: off
+  Choose an Emote to Unlock: off
+
+  Modify a Single Emote:
+    Smart Cost: on
+
+Custom Rewards:
+  HYDRATION:
+    Description: >-
+      time for hydration
+    Require Viewer to Enter Text: off
+    Cost: 100
+    Background Color: \#6D9AE0
+    Skip Reward Requests Queue: off
+    Cooldown & Limits:
+      Redemption Cooldown Time: 15 Minutes
+      Limit Redemptions Per Stream: 20
+      Limit Redemptions Per User Per Stream: ""
