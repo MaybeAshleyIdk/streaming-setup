@@ -13,3 +13,18 @@ variants:
     VISUALS & SOUND:
       file: audio.ogg
       Volume: 4%
+
+  TTS Redemption:
+    GENERAL SETTINGS:
+      Alert Condition: TTS
+      Duration: 12
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+      Say Redemption Message: on
+      Language: English
+      Voice: Brain - UK
+      Volume: 10%
+      Delay: 2
+
+    VISUALS & SOUND: null

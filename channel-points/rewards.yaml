@@ -21,3 +21,15 @@ Custom Rewards:
       Redemption Cooldown Time: 15 Minutes
       Limit Redemptions Per Stream: 20
       Limit Redemptions Per User Per Stream: ""
+
+  TTS:
+    Description: >-
+      Say something using TTS
+    Require Viewer to Enter Text: on
+    Cost: 350
+    # background color is undefined
+    Skip Reward Requests Queue: off
+    Cooldown & Limits:
+      Redemption Cooldown Time: 2 Minutes
+      Limit Redemptions Per Stream: 9999999 # just so that nobody can redeem it while stream isn't running
+      Limit Redemptions Per User Per Stream: ""
