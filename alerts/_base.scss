@@ -1,3 +1,6 @@
+$body-font-size: 12vw !default;
+$alert-container-animation-duration: 10s !default;
+
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
 
 html {
@@ -13,7 +16,7 @@ body {
 
 	font-family: 'Ubuntu Mono', monospace;
 	color: #EFEFEF;
-	font-size: 12vw;
+	font-size: $body-font-size;
 	text-align: center;
 }
 body {
@@ -31,7 +34,7 @@ body {
 }
 
 .alert-container.playing {
-	animation: 10s alert-animation ease-in-out forwards;
+	animation: $alert-container-animation-duration alert-animation ease-in-out forwards;
 }
 
 @keyframes alert-animation {
