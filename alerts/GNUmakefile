@@ -2,9 +2,9 @@
 
 SHELL = /bin/sh
 
-SASSC ?= sassc
-SASSCFLAGS = --style compressed
-override sassc := $(SASSC) $(SASSCFLAGS)
+SASS ?= sass
+SASSFLAGS = --style=compressed
+override sass := $(SASS) $(SASSFLAGS) --no-indented --no-source-map
 
 override alert_directory_pathnames := channel-points/hydration \
                                       channel-points/tts \
@@ -25,7 +25,7 @@ override css_file_pathnames := $(alert_directory_pathnames:%=%/alert.css)
 all: $(css_file_pathnames)
 
 %.css: %.scss
-	$(sassc) $< $@
+	$(sass) $< $@
 
 clean:
 	rm -f -- $(css_file_pathnames)
