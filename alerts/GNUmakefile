@@ -24,6 +24,9 @@ override css_file_pathnames := $(alert_directory_pathnames:%=%/alert.css)
 
 all: $(css_file_pathnames)
 
+watch:
+	$(sass) --watch $(foreach css_file_pathname,$(css_file_pathnames),$(css_file_pathname:%.css=%.scss):$(css_file_pathname))
+
 $(css_file_pathnames): %.css: _partials/_base.scss _partials/_colors.scss %.scss
 	$(sass) $(lastword $^) $@
 
