@@ -4,7 +4,7 @@ SHELL = /bin/sh
 
 SASS ?= sass
 SASSFLAGS = --style=compressed
-override sass := $(SASS) $(SASSFLAGS) --no-indented --no-source-map
+override sass := $(SASS) $(SASSFLAGS) --no-indented --load-path=_partials/ --no-source-map
 
 override alert_directory_pathnames := channel-points/hydration \
                                       channel-points/tts \
@@ -24,7 +24,7 @@ override css_file_pathnames := $(alert_directory_pathnames:%=%/alert.css)
 
 all: $(css_file_pathnames)
 
-$(css_file_pathnames): %.css: _base.scss _colors.scss %.scss
+$(css_file_pathnames): %.css: _partials/_base.scss _partials/_colors.scss %.scss
 	$(sass) $(lastword $^) $@
 
 clean:

@@ -1,8 +1,8 @@
-@use "../../base" with (
+@use "base" with (
 	$body-font-size: min(16vh, 10vw),
 	$alert-container-animation-duration: 12s,
 );
-@use "../../colors";
+@use "colors";
 
 .alert-text-username {
 	color: var(--color-accent);
