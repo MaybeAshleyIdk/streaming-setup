@@ -1,0 +1,20 @@
+@import "../../base";
+
+body {
+	font-size: 10vw;
+}
+
+.alert-container.playing {
+	animation: 12s alert-animation ease-in-out forwards;
+}
+
+.alert-text-username {
+	color: #8F8FEF;
+}
+
+.alert-text-channel-point-message {
+	font-size: 6vw;
+}
+.alert-text-channel-point-message {
+	-webkit-text-stroke: 0 #00000000;
+}
