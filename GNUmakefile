@@ -2,16 +2,18 @@
 
 SHELL = /bin/sh
 
+# <https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html>
+override subdirectory_pathnames := alerts background-music scenes
+
 .SUFFIXES:
 
-all:
-	$(MAKE) -C alerts/ all
-	$(MAKE) -C background-music/ all
-	$(MAKE) -C scenes/ all
+all: $(subdirectory_pathnames)
+$(subdirectory_pathnames):
+	$(MAKE) -C $@/ all
 
-clean:
-	$(MAKE) -C scenes/ clean
-	$(MAKE) -C background-music/ clean
-	$(MAKE) -C alerts/ clean
+clean: $(subdirectory_pathnames:%=clean/%)
+$(subdirectory_pathnames:%=clean/%):
+	$(MAKE) -C $(@:clean/%=%)/ clean
 
-.PHONY: all clean
+.PHONY: all $(subdirectory_pathnames) \
+        clean $(subdirectory_pathnames:%=clean/%)

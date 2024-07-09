@@ -2,16 +2,18 @@
 
 SHELL = /bin/sh
 
+# <https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html>
+override scene_directory_pathnames := starting placeholder ending
+
 .SUFFIXES:
 
-all:
-	$(MAKE) -C starting/ all
-	$(MAKE) -C placeholder/ all
-	$(MAKE) -C ending/ all
+all: $(scene_directory_pathnames)
+$(scene_directory_pathnames):
+	$(MAKE) -C $@/ all
 
-clean:
-	$(MAKE) -C ending/ clean
-	$(MAKE) -C placeholder/ clean
-	$(MAKE) -C starting/ clean
+clean: $(scene_directory_pathnames:%=clean/%)
+$(scene_directory_pathnames:%=clean/%):
+	$(MAKE) -C $(@:clean/%=%)/ clean
 
-.PHONY: all clean
+.PHONY: all $(scene_directory_pathnames) \
+        clean $(scene_directory_pathnames:%=clean/%)
