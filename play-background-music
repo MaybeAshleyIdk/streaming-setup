@@ -3,8 +3,19 @@
 set -o errexit
 set -o nounset
 
+if { make --version 2>&1 | head -n1 | grep -Eq '^GNU Make '; }; then
+	# shellcheck disable=2209
+	gnu_make_command=make
+elif command -v gmake > '/dev/null'; then
+	gnu_make_command=gmake
+else
+	printf '%s: GNU Make not installed\n' "$0" >&2
+	exit 1
+fi
+readonly gnu_make_command
+
 script_dir_pathname="$(dirname -- "$0")"
 readonly script_dir_pathname
 
-make -C "$script_dir_pathname/background-music/" all
+"$gnu_make_command" -C "$script_dir_pathname/background-music/" all
 mpv --no-video --shuffle --loop-playlist --volume=15 -- "$script_dir_pathname/background-music/playlist.m3u8"
