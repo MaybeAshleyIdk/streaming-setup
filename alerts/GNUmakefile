@@ -24,8 +24,8 @@ override css_file_pathnames := $(alert_directory_pathnames:%=%/alert.css)
 
 all: $(css_file_pathnames)
 
-%.css: %.scss
-	$(sass) $< $@
+$(css_file_pathnames): %.css: _base.scss _colors.scss %.scss
+	$(sass) $(lastword $^) $@
 
 clean:
 	rm -f -- $(css_file_pathnames)
