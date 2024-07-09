@@ -1,4 +1,5 @@
 @import "../../base";
+@import "../../colors";
 
 body {
 	font-size: 10vw;
@@ -9,7 +10,7 @@ body {
 }
 
 .alert-text-username {
-	color: #8F8FEF;
+	color: var(--color-accent);
 }
 
 .alert-text-channel-point-message {

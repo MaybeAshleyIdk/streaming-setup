@@ -1,5 +1,6 @@
 @import "../base";
+@import "../colors";
 
 .alert-text-username {
-	color: #8F8FEF;
+	color: var(--color-accent);
 }
