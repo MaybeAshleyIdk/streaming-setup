@@ -1,7 +1,7 @@
 $body-font-size: min(18vh, 12vw) !default;
 $alert-container-animation-duration: 10s !default;
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap");
 
 html {
 	height: 100%;
@@ -14,7 +14,7 @@ body {
 
 	height: 100%;
 
-	font-family: 'Ubuntu Mono', monospace;
+	font-family: "Ubuntu Mono", monospace;
 	color: #EFEFEF;
 	font-size: $body-font-size;
 	text-align: center;
