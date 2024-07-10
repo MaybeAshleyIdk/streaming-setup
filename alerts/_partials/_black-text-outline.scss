@@ -1,0 +1,37 @@
+@use "sass:math";
+@use "sass:list";
+
+$-quarter-segment-points-count: 16;
+$-total-points-count: calc(($-quarter-segment-points-count * 4) + 4);
+$-text-shadow-factor: 0.6;
+
+@mixin black-text-outline {
+	// idea from <https://stackoverflow.com/a/55097644/9581962>
+
+	$text-shadow-tmp: null;
+
+	@for $i from 0 to $-total-points-count {
+		$progress: calc($i / $-total-points-count);
+		$degrees: 360deg * $progress;
+
+		$x: math.cos($degrees);
+		$y: math.sin($degrees);
+
+		$single-text-shadow-vh: calc(($x * 1vh) * $-text-shadow-factor)
+		                        calc(($y * 1vh) * $-text-shadow-factor)
+		                        1px
+		                        #000000;
+		$single-text-shadow-vw: calc(($x * 1vw) * $-text-shadow-factor)
+		                        calc(($y * 1vw) * $-text-shadow-factor)
+		                        1px
+		                        #000000;
+
+		@if $text-shadow-tmp == null {
+			$text-shadow-tmp: ($single-text-shadow-vh, $single-text-shadow-vw);
+		} @else {
+			$text-shadow-tmp: list.join($text-shadow-tmp, ($single-text-shadow-vh, $single-text-shadow-vw));
+		}
+	}
+
+	text-shadow: $text-shadow-tmp;
+}
