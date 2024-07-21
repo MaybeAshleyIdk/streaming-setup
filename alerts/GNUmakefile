@@ -7,6 +7,7 @@ SASSFLAGS = --style=compressed
 override sass := $(SASS) $(SASSFLAGS) --no-indented --load-path=_partials/ --no-source-map
 
 override alert_directory_pathnames := channel-points/hydration \
+                                      channel-points/metal-pipe-sfx \
                                       channel-points/tts \
                                       cheering \
                                       follows \

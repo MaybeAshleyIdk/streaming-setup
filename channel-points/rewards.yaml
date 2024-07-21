@@ -22,6 +22,19 @@ Custom Rewards:
       Limit Redemptions Per Stream: 20
       Limit Redemptions Per User Per Stream: ""
 
+  METAL PIPE SFX:
+    Description: >-
+      please don't
+    Require Viewer to Enter Text: off
+    Cost: 2000
+    Reward Icon: metal-pipe-png
+    # background color is undefined
+    Skip Reward Requests Queue: off
+    Cooldown & Limits:
+      Redemption Cooldown Time: 1 Hours
+      Limit Redemptions Per Stream: 3
+      Limit Redemptions Per User Per Stream: 1
+
   TTS:
     Description: >-
       Say something using TTS

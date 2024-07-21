@@ -14,6 +14,19 @@ variants:
       file: audio.ogg
       Volume: 4%
 
+  METAL PIPE SFX Redemption:
+    GENERAL SETTINGS:
+      Alert Condition: METAL PIPE SFX
+      Duration: 4
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+      Say Redemption Message: off
+
+    VISUALS & SOUND:
+      file: audio.wav
+      Volume: 10%
+
   TTS Redemption:
     GENERAL SETTINGS:
       Alert Condition: TTS
