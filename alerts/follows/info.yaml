@@ -12,7 +12,7 @@ variants:
 
     VISUALS & SOUND:
       file: audio1.ogg
-      Volume: 4%
+      Volume: 10%
 
   New Follow (B):
     GENERAL SETTINGS:
@@ -25,4 +25,4 @@ variants:
 
     VISUALS & SOUND:
       file: audio2.ogg
-      Volume: 4%
+      Volume: 10%

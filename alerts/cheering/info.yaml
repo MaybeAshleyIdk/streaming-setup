@@ -12,12 +12,12 @@ variants:
       Say Cheer Message: on
       Language: English
       Voice: Brian - UK
-      Volume: 10%
+      Volume: 25%
       Delay: 0
 
     VISUALS & SOUND:
       file: audio-ge2000.ogg
-      Volume: 2%
+      Volume: 6%
 
   New Cheer (≥ 1000 bits):
     GENERAL SETTINGS:
@@ -30,12 +30,12 @@ variants:
       Say Cheer Message: on
       Language: English
       Voice: Brian - UK
-      Volume: 10%
+      Volume: 25%
       Delay: 0
 
     VISUALS & SOUND:
       file: audio-ge1000.ogg
-      Volume: 2%
+      Volume: 6%
 
   New Cheer (A):
     GENERAL SETTINGS:
@@ -50,7 +50,7 @@ variants:
 
     VISUALS & SOUND:
       file: audio1.ogg
-      Volume: 4%
+      Volume: 10%
 
   New Cheer (B):
     GENERAL SETTINGS:
@@ -65,4 +65,4 @@ variants:
 
     VISUALS & SOUND:
       file: audio2.ogg
-      Volume: 4%
+      Volume: 10%

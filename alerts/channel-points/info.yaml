@@ -12,7 +12,7 @@ variants:
 
     VISUALS & SOUND:
       file: audio.ogg
-      Volume: 4%
+      Volume: 10%
 
   METAL PIPE SFX Redemption:
     GENERAL SETTINGS:
@@ -37,7 +37,7 @@ variants:
       Say Redemption Message: on
       Language: English
       Voice: Brian - UK
-      Volume: 10%
+      Volume: 25%
       Delay: 2
 
     VISUALS & SOUND: null
