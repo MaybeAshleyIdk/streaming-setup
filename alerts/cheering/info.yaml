@@ -5,7 +5,7 @@ variants:
     GENERAL SETTINGS:
       Alert Condition: Cheered at least
       Bits: 2000
-      Duration: 10
+      Duration: 12
 
     TEXT & SPEECH:
       Say Alert Text: off
@@ -23,7 +23,7 @@ variants:
     GENERAL SETTINGS:
       Alert Condition: Cheered at least
       Bits: 1000
-      Duration: 10
+      Duration: 12
 
     TEXT & SPEECH:
       Say Alert Text: off
