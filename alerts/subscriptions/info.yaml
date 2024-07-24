@@ -1,10 +1,24 @@
 Randomize: off
 
 variants:
-  New Subscriber:
+  New Subscriber (= 1 Month):
     GENERAL SETTINGS:
       Alert Condition: Months subscribed exactly
       Months: 1
+      Duration: 10
+
+    TEXT & SPEECH:
+      Say Alert Text: off
+      Say Resub Message: off
+
+    VISUALS & SOUND:
+      file: audio.ogg
+      Volume: 16%
+
+  New Subscriber (≥ 2 Months):
+    GENERAL SETTINGS:
+      Alert Condition: Months subscribed at least
+      Months: 2
       Duration: 10
 
     TEXT & SPEECH:

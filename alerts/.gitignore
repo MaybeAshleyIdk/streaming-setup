@@ -15,4 +15,5 @@
 
 /raids/alert.css
 
-/subscriptions/alert.css
+/subscriptions/eq-1-month/alert.css
+/subscriptions/ge-2-months/alert.css

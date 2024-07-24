@@ -18,7 +18,8 @@ override alert_directory_pathnames := channel-points/hydration \
                                       gifted-subscriptions/individual \
                                       gifted-subscriptions/individual-anonymous \
                                       raids \
-                                      subscriptions
+                                      subscriptions/eq-1-month \
+                                      subscriptions/ge-2-months
 override css_file_pathnames := $(alert_directory_pathnames:%=%/alert.css)
 
 .SUFFIXES:
