@@ -3,7 +3,7 @@
 SHELL = /bin/sh
 
 # <https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html>
-override subdirectory_pathnames := alerts chatbox background-music obs-scene-collection
+override subdirectory_pathnames := alerts background-music chatbox obs-scene-collection
 
 .SUFFIXES:
 
