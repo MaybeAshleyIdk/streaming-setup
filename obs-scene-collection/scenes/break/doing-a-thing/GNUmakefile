@@ -7,7 +7,7 @@ SHELL = /bin/sh
 all: primary-text-image.png
 
 primary-text-image.png: %.png: %.xcf
-	../../../../gimp-export-png $< $@
+	../../../../export-gimp-xcf $< $@
 
 clean:
 	rm -f -- primary-text-image.png

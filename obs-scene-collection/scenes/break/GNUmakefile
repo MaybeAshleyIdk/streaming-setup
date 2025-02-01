@@ -16,7 +16,7 @@ $(subscene_directory_pathnames):
 
 
 secondary-text-image.png: %.png: %.xcf
-	../../../gimp-export-png $< $@
+	../../../export-gimp-xcf $< $@
 
 
 clean: $(subscene_directory_pathnames:%=clean/%)

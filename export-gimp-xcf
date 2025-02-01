@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# <https://www.gimp.org/tutorials/Basic_Batch/>
+
+set -o errexit
+set -o nounset
+
+input_xcf_file_path="$1"
+readonly input_xcf_file_path
+
+output_file_path="$2"
+readonly output_file_path
+
+script_dir_pathname="$(dirname -- "$0")"
+readonly script_dir_pathname
+
+sed -e s%'{{INPUT_XCF_FILE_PATH}}'%"$input_xcf_file_path"%g \
+    -e s%'{{OUTPUT_FILE_PATH}}'%"$output_file_path"%g \
+    "$script_dir_pathname/export-gimp-xcf-batch-commands.template.scm" |
+	gimp --new-instance --no-interface --batch-interpreter plug-in-script-fu-eval --batch - --quit
