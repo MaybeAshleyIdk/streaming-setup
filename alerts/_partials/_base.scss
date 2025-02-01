@@ -1,4 +1,4 @@
-@import "black-text-outline";
+@use "black-text-outline" as *;
 
 $body-font-size: min(18vh, 12vw) !default;
 $alert-container-animation-duration: 10s !default;
