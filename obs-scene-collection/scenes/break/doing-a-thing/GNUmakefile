@@ -4,12 +4,14 @@ SHELL = /bin/sh
 
 .SUFFIXES:
 
-all: primary-text-image.png
+override text_image_name := primary-text-image.png
 
-primary-text-image.png: %.png: %.xcf
+all: $(text_image_name)
+
+$(text_image_name): primary-text-image.xcf
 	../../../../export-gimp-xcf $< $@
 
 clean:
-	rm -f -- primary-text-image.png
+	rm -f -- $(text_image_name)
 
 .PHONY: all clean
