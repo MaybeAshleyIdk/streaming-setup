@@ -1,0 +1,132 @@
+#!/bin/sh
+# -*- sh -*-
+# vim: syntax=sh
+# code: language=shellscript
+
+#region preamble
+
+case "$-" in
+	(*'i'*)
+		\command printf 'script was called interactively\n' >&2
+		return 124
+		;;
+esac
+
+set -o errexit
+set -o nounset
+
+# enabling POSIX-compliant behavior for GNU programs
+export POSIXLY_CORRECT=yes POSIX_ME_HARDER=yes
+
+if [ "${0#/}" = "$0" ]; then
+	argv0="$0"
+else
+	argv0="$(basename -- "$0" && printf x)"
+	argv0="${argv0%"$(printf '\nx')"}"
+fi
+readonly argv0
+
+#endregion
+
+if ! command -v obs-cmd > '/dev/null'; then
+	printf '%s: obs-cmd: program missing\n' "$argv0" >&2
+	exit 27
+fi
+
+#region environment variables
+
+is_absolute_path() {
+	test "${1#/}" != "$1"
+}
+
+home_dir_path=''
+init_home_dir_path() {
+	if [ -n "$home_dir_path" ]; then
+		return
+	fi
+
+	home_dir_path="${HOME-}"
+
+	if [ -z "$home_dir_path" ]; then
+		printf '%s: environment variable HOME is unset or empty\n' "$argv0" >&2
+		exit 48
+	fi
+
+	if ! is_absolute_path "$home_dir_path"; then
+		printf "%s: environment variable HOME does not contain a relative path ('%s')\\n" "$argv0" "$home_dir_path" >&2
+		exit 49
+	fi
+}
+
+base_config_dir_path="${XDG_CONFIG_HOME-}"
+if ! is_absolute_path "$base_config_dir_path"; then
+	init_home_dir_path
+	base_config_dir_path="$home_dir_path/.config"
+fi
+readonly base_config_dir_path
+
+base_state_dir_path="${XDG_STATE_HOME-}"
+if ! is_absolute_path "$base_state_dir_path"; then
+	init_home_dir_path
+	base_state_dir_path="$home_dir_path/.local/state"
+fi
+readonly base_state_dir_path
+
+unset -f init_home_dir_path
+unset -v home_dir_path
+unset -f is_absolute_path
+
+#endregion
+
+obs_websocket_password="$(cat -- "$base_config_dir_path/maybeashleyidk-streaming-setup/obs-websocket-password.txt")"
+readonly obs_websocket_password
+
+obs_cmd() {
+	obs-cmd --websocket "obsws://localhost:4455/$obs_websocket_password" "$@"
+}
+
+
+previous_main_scene_name_file="$base_state_dir_path/maybeashleyidk-streaming-setup/previous-obs-main-scene.txt"
+readonly previous_main_scene_name_file
+
+
+current_scene_name="$(obs_cmd scene current)"
+current_scene_name="${current_scene_name#\"}"
+current_scene_name="${current_scene_name%\"}"
+readonly current_scene_name
+
+case "$current_scene_name" in
+	('Main'*)
+		obs_cmd scene switch 'Break — Doing A Thing'
+
+		mkdir -p -- "$(dirname -- "$previous_main_scene_name_file")"
+		printf '%s\n' "$current_scene_name" > "$previous_main_scene_name_file"
+		;;
+	('Break'*)
+		if [ -e "$previous_main_scene_name_file" ]; then
+			if [ ! -f "$previous_main_scene_name_file" ]; then
+				if [ -d "$previous_main_scene_name_file" ]; then
+					what='file'
+				else
+					what='regular file'
+				fi
+				readonly what
+
+				printf '%s: %s: not a %s\n' "$argv0" "$previous_main_scene_name_file" "$what" >&2
+				exit 26
+			fi
+
+			if [ ! -r "$previous_main_scene_name_file" ]; then
+				printf '%s: %s: permission denied: read permission missing\n' "$argv0" "$previous_main_scene_name_file" >&2
+				exit 77
+			fi
+
+			previous_main_scene_name="$(cat -- "$previous_main_scene_name_file")"
+		else
+			previous_main_scene_name='Main'
+		fi
+		readonly previous_main_scene_name
+
+		obs_cmd scene switch "$previous_main_scene_name"
+		;;
+esac
